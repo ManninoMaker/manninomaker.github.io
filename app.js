@@ -7,7 +7,7 @@ function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&l
 function safeHref(v){const s=String(v||"").trim();if(!s)return "";if(/^(https?:|mailto:)/i.test(s)||/^(\/|\.\/|\.\.\/|#)/.test(s)||/^[\w.-]+\//.test(s))return s;return ""}
 function clean(p){return {...p,technologies:arr(p.technologies),files:arr(p.files),features:arr(p.features),links:Array.isArray(p.links)?p.links:[],featured:Boolean(p.featured),published:p.published!==false,sort_order:Number(p.sort_order??p.order??9999)}}
 function resourceCount(p){return p.files.length+p.links.filter(link=>link&&link.url).length+(p.project_url?1:0)}
-function iconHtml(p,cls){const img=safeHref(p.image_url);return `<span class="${cls}">${img?`<img src="${esc(img)}" alt="">`:esc(p.icon||"MM")}</span>`}
+function iconHtml(p,cls){const img=safeHref(p.image_url);return `<span class="${cls}${img?" has-image":""}">${img?`<img src="${esc(img)}" alt="">`:esc(p.icon||"MM")}</span>`}
 function homeAssetPath(value){let s=String(value||"").trim();if(/^(https?:|data:)/i.test(s))return s;while(s.startsWith("../"))s=s.slice(3);if(s.startsWith("./"))s=s.slice(2);return s}
 async function discoverLocalProjects(fallback){
   const localHosts=["localhost","127.0.0.1","::1"];

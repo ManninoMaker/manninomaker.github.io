@@ -49,6 +49,10 @@
     "image_url": "assets/projects/gestione-postazioni-lago/copertina.png",
 
     "gallery": [
+       {
+        "image": "assets/projects/gestione-postazioni-lago/generale.png",
+        "caption": "Vista Generale"
+      },
       {
         "image": "assets/projects/gestione-postazioni-lago/mockup-mobile.png",
         "caption": "Vista mobile con selezione e dettagli della postazione 19"
