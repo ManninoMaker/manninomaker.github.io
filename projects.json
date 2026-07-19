@@ -1,2 +1,70 @@
 [
+  {
+    "slug": "gestione-postazioni-lago",
+    "title": "Gestione Postazioni Lago",
+    "category": "Web App",
+    "short_description": "Sistema web responsive per controllare in tempo reale lo stato delle postazioni di pesca, occuparle o liberarle tramite mappa interattiva e QR code.",
+    "description": "Piattaforma completa per la gestione delle postazioni di un lago: mappa live, accesso utenti, conferma tramite QR, storico delle occupazioni, amministrazione e supporto alla gestione delle gare.",
+    "icon": "GL",
+    "status": "Funzionante",
+    "level": "Avanzato",
+
+    "technologies": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "HTML/CSS",
+      "QR Code",
+      "Responsive Web App"
+    ],
+
+    "files": [
+      "Web app responsive",
+      "Database MySQL",
+      "Pagine PHP",
+      "QR code postazioni",
+      "Documentazione"
+    ],
+
+    "features": [
+      "Mappa interattiva con 20 postazioni",
+      "Stato aggiornato in tempo reale",
+      "Accesso con account personale",
+      "Registrazione con approvazione amministratore",
+      "Occupazione e liberazione della postazione",
+      "Conferma tramite QR code dedicato",
+      "Storico completo delle occupazioni",
+      "Gestione utenti e postazioni",
+      "Interfaccia ottimizzata per smartphone",
+      "Supporto a gare, catture e classifiche live"
+    ],
+
+    "links": [],
+
+    "featured": true,
+    "published": true,
+    "order": 1,
+    "date": "2026-07-19",
+
+    "image_url": "assets/projects/gestione-postazioni-lago/copertina.png",
+
+    "gallery": [
+      {
+        "image": "assets/projects/gestione-postazioni-lago/mockup-mobile.png",
+        "caption": "Vista mobile con selezione e dettagli della postazione 19"
+      },
+      {
+        "image": "assets/projects/gestione-postazioni-lago/come-funziona.png",
+        "caption": "Infografica del flusso di utilizzo del sistema"
+      },
+      {
+        "image": "assets/projects/gestione-postazioni-lago/mappa-originale.jpeg",
+        "caption": "Mappa reale utilizzata dal sistema con le 20 postazioni"
+      }
+    ],
+
+    "page_url": "progetti/gestione-postazioni-lago.html",
+    "url": "progetti/gestione-postazioni-lago.html",
+    "project_url": ""
+  }
 ]
