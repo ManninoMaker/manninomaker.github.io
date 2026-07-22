@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#061009">
+  <title>DimaPrint — Mannino Maker</title>
+  <meta name="description" content="Applicazione per creare dime tecniche personalizzate e generare PDF stampabili in scala reale 1:1.">
+  <link rel="icon" href="../logo_mannino_maker.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!--
+  La pagina legge normalmente i dati da ../projects.json tramite project.js.
+  Questo blocco resta come copia di sicurezza se il catalogo non è disponibile.
+-->
+<script id="mm-project-data" type="application/json">
+{
+  "slug": "dimaprint",
+  "title": "DimaPrint",
+  "category": "App",
+  "short_description": "Applicazione per creare dime tecniche personalizzate e generare PDF stampabili in scala reale 1:1.",
+  "description": "Strumento per progettare dime di foratura, griglie, flange, attacchi VESA, maniglie, cerniere e cerchi, con anteprima tecnica ed esportazione PDF in scala reale.",
+  "icon": "DP",
+  "status": "Funzionante",
+  "level": "Avanzato",
+  "technologies": [
+    "Flutter",
+    "Dart",
+    "PDF vettoriale",
+    "Stampa 1:1",
+    "Windows"
+  ],
+  "files": [
+    "Installer Windows",
+    "PDF in scala 1:1",
+    "Dime su più pagine",
+    "Formati A4 e A3"
+  ],
+  "features": [
+    "Creazione di dime per fori in linea",
+    "Generazione di griglie di foratura personalizzate",
+    "Dime per flange e piastre circolari",
+    "Supporto per attacchi VESA",
+    "Dime per maniglie, staffe e cerniere",
+    "Creazione di cerchi e riferimenti concentrici",
+    "Inserimento preciso delle misure in millimetri",
+    "Anteprima tecnica aggiornata in tempo reale",
+    "Esportazione PDF vettoriale in scala reale 1:1",
+    "Formati pagina A4 e A3, verticali oppure orizzontali",
+    "Suddivisione automatica delle dime grandi su più fogli",
+    "Sovrapposizione, riferimenti e linee di taglio per allineare le pagine",
+    "Quadrato di controllo 20 x 20 mm per verificare la scala di stampa",
+    "Stampa, salvataggio e condivisione del PDF",
+    "Funzionamento offline senza account obbligatorio",
+    "Interfaccia moderna dark con identità Mannino Maker"
+  ],
+  "links": [
+    {
+      "label": "Scarica installer Windows v1.0.4",
+      "url": "download/dimaprint/DimaPrint_Setup_1.0.4.exe",
+      "style": "primary"
+    }
+  ],
+  "featured": false,
+  "published": true,
+  "order": 4,
+  "date": "2026-07-22",
+  "image_url": "assets/projects/dimaprint/copertina.png",
+  "gallery": [
+    {
+      "image": "assets/projects/dimaprint/home.png",
+      "caption": "Schermata principale con le categorie di dime disponibili"
+    },
+    {
+      "image": "assets/projects/dimaprint/configurazione.png",
+      "caption": "Configurazione precisa delle misure, del formato pagina e delle opzioni di stampa"
+    },
+    {
+      "image": "assets/projects/dimaprint/anteprima-pdf.png",
+      "caption": "Anteprima della dima tecnica prima della generazione e della stampa del PDF"
+    }
+  ],
+  "page_url": "progetti/dimaprint.html",
+  "url": "progetti/dimaprint.html",
+  "project_url": ""
+}
+</script>
+
+<main class="container project-page">
+  <nav class="project-nav" aria-label="Navigazione">
+    <a class="brand-link" href="../index.html">
+      <img src="../logo_mannino_maker.png" alt="Logo Mannino Maker">
+      <span>
+        <strong>Mannino Maker</strong>
+        <small>Torna al portfolio</small>
+      </span>
+    </a>
+    <a class="button" href="../index.html#progetti">← Tutti i progetti</a>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="project-detail-copy">
+      <div id="projectEyebrow" class="eyebrow"></div>
+      <h1 id="projectTitle"></h1>
+      <p id="projectDescription"></p>
+      <div id="projectTechnologies" class="chips project-hero-chips"></div>
+    </div>
+    <div id="projectVisual" class="project-detail-visual"></div>
+  </header>
+
+  <section class="project-meta-grid">
+    <article><small>Categoria</small><strong id="projectCategory">—</strong></article>
+    <article><small>Stato</small><strong id="projectStatus">—</strong></article>
+    <article><small>Livello</small><strong id="projectLevel">—</strong></article>
+    <article><small>Aggiornato</small><strong id="projectDate">—</strong></article>
+  </section>
+
+  <div class="project-detail-grid">
+    <article class="project-content prose">
+      <h2>Panoramica</h2>
+      <p>
+        DimaPrint è un’applicazione sviluppata per creare dime tecniche
+        personalizzate da stampare in scala reale. Permette di configurare
+        misure, distanze, diametri e quantità dei fori, controllare il risultato
+        tramite un’anteprima e generare un PDF pronto per la stampa.
+      </p>
+      <p>
+        L’applicazione riunisce in un’unica interfaccia diversi strumenti utili
+        per lavori domestici, falegnameria, montaggio, manutenzione, officina e
+        progetti maker. Le dime possono essere utilizzate per riportare con
+        precisione fori, interassi e riferimenti direttamente sul pezzo da
+        lavorare.
+      </p>
+
+      <h2>Problema risolto</h2>
+      <p>
+        Quando bisogna montare una maniglia, una cerniera, una staffa, una
+        flangia o una piastra con più fori, riportare manualmente tutte le misure
+        può causare errori di allineamento. I normali programmi di disegno
+        richiedono inoltre tempo e conoscenze specifiche per ottenere una stampa
+        realmente in scala.
+      </p>
+      <p>
+        DimaPrint permette invece di inserire direttamente le misure necessarie
+        e produce una dima pronta da stampare, ritagliare e posizionare sul
+        materiale.
+      </p>
+
+      <h2>Tipologie di dima</h2>
+      <p>
+        Il programma comprende categorie dedicate alle lavorazioni più comuni:
+        fori in linea, griglie, flange, attacchi VESA, maniglie, cerniere e
+        cerchi. Ogni tipologia presenta soltanto i parametri necessari, rendendo
+        la configurazione più semplice e riducendo il rischio di inserire dati
+        non pertinenti.
+      </p>
+
+      <h2>Fori in linea</h2>
+      <p>
+        La modalità per fori in linea consente di impostare il numero di fori,
+        il diametro e l’interasse. È utile per creare dime destinate a staffe,
+        supporti, piastre, fissaggi e componenti che richiedono una sequenza di
+        fori perfettamente allineati.
+      </p>
+
+      <h2>Griglie di foratura</h2>
+      <p>
+        La funzione griglia genera matrici di fori regolari configurando righe,
+        colonne, distanze orizzontali e verticali. Può essere utilizzata per
+        pannelli, sistemi modulari, ventilazione, supporti e lavorazioni
+        ripetitive.
+      </p>
+
+      <h2>Flange e piastre circolari</h2>
+      <p>
+        Per flange e piastre è possibile distribuire i fori lungo una
+        circonferenza impostando il diametro della disposizione, il numero di
+        punti e il diametro dei fori. La dima ottenuta facilita la marcatura
+        uniforme attorno al centro del componente.
+      </p>
+
+      <h2>Attacchi VESA</h2>
+      <p>
+        DimaPrint include configurazioni dedicate agli interassi VESA utilizzati
+        per monitor, televisori e supporti. La stampa può essere posizionata
+        direttamente sulla superficie per controllare gli ingombri e riportare
+        con precisione i punti di fissaggio.
+      </p>
+
+      <h2>Maniglie e cerniere</h2>
+      <p>
+        Le sezioni dedicate a maniglie e cerniere permettono di creare dime per
+        mobili, sportelli, pannelli e strutture. L’utente inserisce le distanze
+        reali e ottiene un riferimento stampabile che evita misurazioni ripetute
+        su ogni pezzo.
+      </p>
+
+      <h2>Anteprima tecnica</h2>
+      <p>
+        Durante la configurazione viene mostrata un’anteprima aggiornata della
+        dima. Quote, centri, fori e dimensioni principali consentono di
+        controllare il progetto prima di generare il documento definitivo.
+      </p>
+
+      <h2>PDF in scala reale 1:1</h2>
+      <p>
+        Il PDF viene generato in formato vettoriale mantenendo le dimensioni
+        impostate in millimetri. Sono disponibili i formati A4 e A3, sia
+        verticali sia orizzontali. In fase di stampa è necessario selezionare
+        <strong>Dimensioni effettive</strong> oppure <strong>Scala 100%</strong>
+        e disattivare l’adattamento automatico alla pagina.
+      </p>
+
+      <h2>Dime su più pagine</h2>
+      <p>
+        Quando la dima supera l’area utile del foglio, DimaPrint la suddivide
+        automaticamente su più pagine. Ogni foglio contiene riferimenti di
+        allineamento, margini di sovrapposizione e indicazioni utili per
+        ricomporre correttamente il disegno completo.
+      </p>
+
+      <h2>Controllo della scala</h2>
+      <p>
+        Nel PDF è presente un quadrato di verifica da 20 x 20 mm. Dopo la stampa
+        è possibile misurarlo con un righello o un calibro per controllare che
+        la stampante non abbia ridimensionato il documento.
+      </p>
+
+      <h2>Flusso di utilizzo</h2>
+      <ol>
+        <li>Si seleziona la tipologia di dima da creare.</li>
+        <li>Si inseriscono le misure reali in millimetri.</li>
+        <li>Si configurano formato, orientamento e opzioni della pagina.</li>
+        <li>Si controlla il risultato tramite l’anteprima tecnica.</li>
+        <li>Si genera il PDF in scala 1:1.</li>
+        <li>Si stampa al 100%, si verifica il quadrato di controllo e si utilizza la dima.</li>
+      </ol>
+
+      <h2>Funzionamento offline</h2>
+      <p>
+        Tutta la progettazione e la generazione del PDF vengono eseguite
+        direttamente sul computer. Non è necessario creare un account e le
+        misure inserite non vengono inviate a servizi esterni.
+      </p>
+
+      <h2>Interfaccia</h2>
+      <p>
+        L’interfaccia utilizza il tema scuro Mannino Maker con accenti verdi.
+        Le categorie sono organizzate in schede, mentre i parametri sono
+        raggruppati per funzione. I pulsanti principali per generare, stampare
+        e salvare il PDF restano facilmente accessibili.
+      </p>
+
+      <h2>Versione 1.0.4</h2>
+      <p>
+        La versione 1.0.4 comprende le principali categorie di dime, la
+        configurazione in millimetri, l’anteprima tecnica, i formati A4 e A3,
+        la suddivisione su più pagine, il controllo della scala e la
+        distribuzione tramite installer Windows.
+      </p>
+
+      <h2>Destinatari</h2>
+      <p>
+        DimaPrint è pensato per maker, hobbisti, installatori, manutentori,
+        falegnami e utenti domestici che desiderano creare rapidamente dime
+        precise senza utilizzare un programma CAD completo.
+      </p>
+    </article>
+
+    <aside class="project-sidebar">
+      <section id="featuresPanel" class="detail-panel">
+        <h2>Funzioni principali</h2>
+        <ul id="projectFeatures"></ul>
+      </section>
+
+      <section id="filesPanel" class="detail-panel">
+        <h2>File e formati</h2>
+        <div id="projectFiles" class="modal-tags"></div>
+      </section>
+
+      <section id="linksPanel" class="detail-panel project-links">
+        <h2>Download</h2>
+        <div id="projectLinks"></div>
+      </section>
+    </aside>
+  </div>
+
+  <section id="gallerySection" class="project-gallery-section hidden">
+    <div class="section-title">
+      <div>
+        <h2>Galleria</h2>
+        <p>Schermate e immagini del progetto.</p>
+      </div>
+    </div>
+    <div id="projectGallery" class="project-gallery"></div>
+  </section>
+
+  <section class="contact project-contact">
+    <div>
+      <div class="eyebrow">Informazioni sul progetto</div>
+      <h2>Contattami</h2>
+      <p>
+        Scrivimi per informazioni, segnalazioni o proposte relative a DimaPrint.
+      </p>
+    </div>
+    <div class="contact-actions">
+      <a id="projectMail" class="button primary">Invia un’email ✉</a>
+      <a class="button" href="../index.html">Torna al portfolio</a>
+    </div>
+  </section>
+
+  <footer class="footer">Mannino Maker · Portfolio personale</footer>
+</main>
+
+<script src="../project.js"></script>
+</body>
+</html>

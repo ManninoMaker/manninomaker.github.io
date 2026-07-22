@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#061009">
+  <title>ImageCraft — Mannino Maker</title>
+  <meta name="description" content="Applicazione per rimuovere lo sfondo dalle immagini, esportare PNG trasparenti e creare icone Windows in formato ICO.">
+  <link rel="icon" href="../logo_mannino_maker.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!--
+  La pagina legge normalmente i dati da ../projects.json tramite project.js.
+  Questo blocco resta come copia di sicurezza se il catalogo non è disponibile.
+-->
+<script id="mm-project-data" type="application/json">
+{
+  "slug": "imagecraft",
+  "title": "ImageCraft",
+  "category": "App",
+  "short_description": "Applicazione per rimuovere automaticamente lo sfondo dalle immagini, esportare PNG trasparenti e creare icone Windows in formato ICO.",
+  "description": "Strumento semplice per ottenere immagini con sfondo trasparente e convertirle in icone Windows multi-risoluzione, utilizzabile su PC e Android.",
+  "icon": "IC",
+  "status": "Funzionante",
+  "level": "Avanzato",
+  "technologies": [
+    "Elaborazione immagini",
+    "PNG trasparente",
+    "Icone ICO",
+    "Windows",
+    "Android"
+  ],
+  "files": [
+    "Installer Windows",
+    "APK Android",
+    "PNG trasparente",
+    "Icone ICO"
+  ],
+  "features": [
+    "Rimozione automatica dello sfondo dalle immagini",
+    "Elaborazione offline direttamente sul dispositivo",
+    "Modalità online opzionale per immagini più complesse",
+    "Anteprima dell'immagine originale e del risultato",
+    "Esportazione in PNG con trasparenza reale",
+    "Conversione dell'immagine originale o scontornata in formato ICO",
+    "Creazione di icone multi-risoluzione da 16 a 256 pixel",
+    "Adattamento completo con margini trasparenti o ritaglio quadrato",
+    "Interfaccia ottimizzata per PC e dispositivi Android",
+    "Salvataggio diretto dei file elaborati"
+  ],
+  "links": [
+    {
+      "label": "Scarica installer Windows v1.1.3",
+      "url": "download/imagecraft/ImageCraft_Setup_1.1.3_x64.exe",
+      "style": "primary"
+    },
+    {
+      "label": "Scarica APK Android v1.1.3",
+      "url": "download/imagecraft/ImageCraft_v1.1.3.apk",
+      "style": "normal"
+    }
+  ],
+  "featured": false,
+  "published": true,
+  "order": 3,
+  "date": "2026-07-21",
+  "image_url": "assets/projects/imagecraft/copertina.png",
+  "gallery": [
+    {
+      "image": "assets/projects/imagecraft/rimozione-sfondo.png",
+      "caption": "Rimozione dello sfondo con confronto tra immagine originale e risultato trasparente"
+    },
+    {
+      "image": "assets/projects/imagecraft/creazione-ico.png",
+      "caption": "Creazione di un'icona Windows multi-risoluzione in formato ICO"
+    }
+  ],
+  "page_url": "progetti/imagecraft.html",
+  "url": "progetti/imagecraft.html",
+  "project_url": ""
+}
+</script>
+
+<main class="container project-page">
+  <nav class="project-nav" aria-label="Navigazione">
+    <a class="brand-link" href="../index.html">
+      <img src="../logo_mannino_maker.png" alt="Logo Mannino Maker">
+      <span>
+        <strong>Mannino Maker</strong>
+        <small>Torna al portfolio</small>
+      </span>
+    </a>
+    <a class="button" href="../index.html#progetti">← Tutti i progetti</a>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="project-detail-copy">
+      <div id="projectEyebrow" class="eyebrow"></div>
+      <h1 id="projectTitle"></h1>
+      <p id="projectDescription"></p>
+      <div id="projectTechnologies" class="chips project-hero-chips"></div>
+    </div>
+    <div id="projectVisual" class="project-detail-visual"></div>
+  </header>
+
+  <section class="project-meta-grid">
+    <article><small>Categoria</small><strong id="projectCategory">—</strong></article>
+    <article><small>Stato</small><strong id="projectStatus">—</strong></article>
+    <article><small>Livello</small><strong id="projectLevel">—</strong></article>
+    <article><small>Aggiornato</small><strong id="projectDate">—</strong></article>
+  </section>
+
+  <div class="project-detail-grid">
+    <article class="project-content prose">
+      <h2>Panoramica</h2>
+      <p>
+        ImageCraft è un’applicazione pensata per semplificare due operazioni
+        molto comuni nella preparazione delle immagini: la rimozione dello
+        sfondo e la creazione di icone Windows. Tutte le funzioni sono raccolte
+        in un’unica interfaccia semplice, adatta sia all’utilizzo da PC sia da
+        dispositivo Android.
+      </p>
+      <p>
+        Il programma permette di selezionare un’immagine, eliminare lo sfondo,
+        controllare il risultato in anteprima e salvarlo in formato PNG con
+        trasparenza reale. La stessa immagine può poi essere trasformata in un
+        file <code>.ico</code> completo e compatibile con Windows.
+      </p>
+
+      <h2>Problema risolto</h2>
+      <p>
+        Per preparare un logo, una grafica o un’immagine destinata a un sito o
+        a un programma è spesso necessario utilizzare strumenti diversi: uno
+        per rimuovere lo sfondo, uno per sistemare le proporzioni e un altro per
+        creare l’icona. ImageCraft riunisce queste operazioni e riduce i passaggi
+        necessari, evitando conversioni manuali e semplici rinominazioni di file
+        che non producono vere icone Windows.
+      </p>
+
+      <h2>Rimozione dello sfondo</h2>
+      <p>
+        Lo strumento analizza l’immagine e separa automaticamente il soggetto
+        dallo sfondo. Il risultato viene mostrato sopra una trama a scacchi, così
+        è possibile verificare immediatamente le aree trasparenti prima del
+        salvataggio.
+      </p>
+      <p>
+        L’elaborazione può essere eseguita direttamente sul dispositivo senza
+        inviare il file su Internet. Per immagini particolarmente difficili è
+        disponibile anche una modalità online opzionale. Sono presenti controlli
+        per migliorare i bordi, ammorbidire il ritaglio e ottenere un risultato
+        più pulito sugli elementi sottili.
+      </p>
+
+      <h2>Esportazione PNG trasparente</h2>
+      <p>
+        Dopo la rimozione dello sfondo, l’immagine viene salvata in formato
+        <code>.png</code> mantenendo il canale di trasparenza. Il file ottenuto
+        può essere utilizzato in siti web, documenti, presentazioni, stampe,
+        grafiche e altri programmi senza dover effettuare ulteriori conversioni.
+      </p>
+
+      <h2>Creazione di icone Windows</h2>
+      <p>
+        ImageCraft genera veri file <code>.ico</code> multi-risoluzione. Ogni
+        icona contiene le dimensioni 16, 24, 32, 48, 64, 128 e 256 pixel, così
+        Windows può scegliere automaticamente quella più adatta per Esplora
+        file, collegamenti, finestre e barra delle applicazioni.
+      </p>
+      <p>
+        È possibile utilizzare l’immagine originale oppure quella appena
+        elaborata senza sfondo. La modalità <strong>Immagine intera</strong>
+        conserva tutte le proporzioni aggiungendo margini trasparenti, mentre
+        la modalità <strong>Riempi icona</strong> adatta l’immagine al formato
+        quadrato tramite ritaglio centrale.
+      </p>
+
+      <h2>Flusso di utilizzo</h2>
+      <ol>
+        <li>Si seleziona un’immagine dal dispositivo.</li>
+        <li>Si sceglie lo strumento per rimuovere lo sfondo o creare un’icona.</li>
+        <li>Si regolano le opzioni disponibili in base al risultato desiderato.</li>
+        <li>Si controlla l’anteprima dell’immagine elaborata.</li>
+        <li>Si salva il PNG trasparente oppure il file ICO multi-risoluzione.</li>
+      </ol>
+
+      <h2>File supportati</h2>
+      <p>
+        Il programma può importare i formati immagine più comuni e produrre
+        file PNG trasparenti e icone Windows ICO. I risultati vengono salvati
+        direttamente nella posizione scelta dall’utente.
+      </p>
+
+      <h2>Interfaccia</h2>
+      <p>
+        L’interfaccia utilizza il tema Mannino Maker scuro con accenti verdi ed
+        è organizzata in strumenti distinti. L’anteprima prima e dopo rende
+        immediato il confronto, mentre i controlli principali restano sempre
+        facilmente accessibili anche su schermi di dimensioni ridotte.
+      </p>
+
+      <h2>Versione 1.1.3</h2>
+      <p>
+        La versione 1.1.3 comprende la rimozione automatica dello sfondo,
+        l’esportazione PNG trasparente, la creazione di icone ICO
+        multi-risoluzione, il logo ImageCraft e la distribuzione tramite
+        installer Windows e applicazione Android.
+      </p>
+
+      <h2>Destinatari</h2>
+      <p>
+        ImageCraft è pensato per maker, grafici, sviluppatori, studenti e utenti
+        che hanno bisogno di preparare rapidamente immagini trasparenti, loghi e
+        icone senza utilizzare più programmi separati.
+      </p>
+    </article>
+
+    <aside class="project-sidebar">
+      <section id="featuresPanel" class="detail-panel">
+        <h2>Funzioni principali</h2>
+        <ul id="projectFeatures"></ul>
+      </section>
+
+      <section id="filesPanel" class="detail-panel">
+        <h2>File e formati</h2>
+        <div id="projectFiles" class="modal-tags"></div>
+      </section>
+
+      <section id="linksPanel" class="detail-panel project-links">
+        <h2>Download</h2>
+        <div id="projectLinks"></div>
+      </section>
+    </aside>
+  </div>
+
+  <section id="gallerySection" class="project-gallery-section hidden">
+    <div class="section-title">
+      <div>
+        <h2>Galleria</h2>
+        <p>Schermate e immagini del progetto.</p>
+      </div>
+    </div>
+    <div id="projectGallery" class="project-gallery"></div>
+  </section>
+
+  <section class="contact project-contact">
+    <div>
+      <div class="eyebrow">Informazioni sul progetto</div>
+      <h2>Contattami</h2>
+      <p>
+        Scrivimi per informazioni, segnalazioni o proposte relative a ImageCraft.
+      </p>
+    </div>
+    <div class="contact-actions">
+      <a id="projectMail" class="button primary">Invia un’email ✉</a>
+      <a class="button" href="../index.html">Torna al portfolio</a>
+    </div>
+  </section>
+
+  <footer class="footer">Mannino Maker · Portfolio personale</footer>
+</main>
+
+<script src="../project.js"></script>
+</body>
+</html>

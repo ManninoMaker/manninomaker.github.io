@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#061009">
+  <title>HTML Firmware Studio — Mannino Maker</title>
+  <meta name="description" content="Applicazione per convertire HTML nei formati Arduino, ESP, MicroPython e CircuitPython e ricostruire il file HTML dal codice incorporato.">
+  <link rel="icon" href="../logo_mannino_maker.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!--
+  La pagina legge normalmente i dati da ../projects.json tramite project.js.
+  Questo blocco resta come copia di sicurezza se il catalogo non è disponibile.
+-->
+<script id="mm-project-data" type="application/json">
+{
+  "slug": "html-firmware-studio",
+  "title": "HTML Firmware Studio",
+  "category": "App",
+  "short_description": "Applicazione per convertire pagine HTML nei formati utilizzati da Arduino, ESP32, ESP8266, MicroPython e CircuitPython, con conversione inversa.",
+  "description": "Studio multiprofilo per incorporare interfacce HTML nei firmware dei microcontrollori e ricostruire il file HTML dal codice sorgente generato.",
+  "icon": "HF",
+  "status": "Funzionante",
+  "level": "Avanzato",
+  "technologies": [
+    "Arduino/C++",
+    "ESP32/ESP8266",
+    "MicroPython",
+    "CircuitPython"
+  ],
+  "files": [
+    "Progetto Windows"
+  ],
+  "features": [
+    "Conversione bidirezionale tra HTML e codice firmware",
+    "Arduino client.print e client.println",
+    "Stringhe C++ raw in PROGMEM",
+    "ESP32 WebServer ed ESP8266WebServer",
+    "ESPAsyncWebServer",
+    "MicroPython socket",
+    "CircuitPython Adafruit HTTPServer",
+    "Apertura e salvataggio di HTML, INO, CPP, H, HPP, PY e TXT",
+    "Nomi di client, server, socket e variabile HTML personalizzabili",
+    "Route HTTP e Content-Type configurabili",
+    "Macro F() e intestazioni HTTP opzionali",
+    "Conservazione di indentazione e righe vuote",
+    "Manuale interno con esempi per ogni piattaforma",
+    "Tema chiaro e scuro",
+    "Test automatici di conversione reversibile"
+  ],
+  "links": [
+    {
+      "label": "Scarica sorgenti v2.0.3",
+      "url": "download/html-firmware-studio/HTML_Firmware_Studio_v2.0.3.zip",
+      "style": "primary"
+    }
+  ],
+  "featured": false,
+  "published": true,
+  "order": 2,
+  "date": "2026-07-20",
+  "image_url": "assets/projects/html-firmware-studio/copertina.png",
+  "gallery": [],
+  "page_url": "progetti/html-firmware-studio.html",
+  "url": "progetti/html-firmware-studio.html",
+  "project_url": ""
+}
+</script>
+
+<main class="container project-page">
+  <nav class="project-nav" aria-label="Navigazione">
+    <a class="brand-link" href="../index.html">
+      <img src="../logo_mannino_maker.png" alt="Logo Mannino Maker">
+      <span>
+        <strong>Mannino Maker</strong>
+        <small>Torna al portfolio</small>
+      </span>
+    </a>
+    <a class="button" href="../index.html#progetti">← Tutti i progetti</a>
+  </nav>
+
+  <header class="project-detail-hero">
+    <div class="project-detail-copy">
+      <div id="projectEyebrow" class="eyebrow"></div>
+      <h1 id="projectTitle"></h1>
+      <p id="projectDescription"></p>
+      <div id="projectTechnologies" class="chips project-hero-chips"></div>
+    </div>
+    <div id="projectVisual" class="project-detail-visual"></div>
+  </header>
+
+  <section class="project-meta-grid">
+    <article><small>Categoria</small><strong id="projectCategory">—</strong></article>
+    <article><small>Stato</small><strong id="projectStatus">—</strong></article>
+    <article><small>Livello</small><strong id="projectLevel">—</strong></article>
+    <article><small>Aggiornato</small><strong id="projectDate">—</strong></article>
+  </section>
+
+  <div class="project-detail-grid">
+    <article class="project-content prose">
+      <h2>Panoramica</h2>
+      <p>
+        HTML Firmware Studio è un’applicazione sviluppata per
+        semplificare l’inserimento di pagine HTML nei firmware di Arduino,
+        ESP32, ESP8266 e schede programmabili in Python. Il programma trasforma
+        automaticamente il contenuto HTML nel formato richiesto dalla
+        piattaforma selezionata, evitando la conversione manuale di virgolette,
+        caratteri speciali e righe di codice.
+      </p>
+      <p>
+        Il funzionamento è bidirezionale: oltre a generare il codice da
+        incorporare nel firmware, l’applicazione può analizzare codice Arduino,
+        C++ o Python già esistente e ricostruire la pagina HTML originale.
+        Questo permette di modificare interfacce web già integrate nei
+        microcontrollori senza doverle riscrivere da zero.
+      </p>
+
+      <h2>Problema risolto</h2>
+      <p>
+        Inserire una pagina web direttamente in un firmware è un’operazione
+        ripetitiva e soggetta a errori. Ogni riga può richiedere escape,
+        concatenazioni, macro, stringhe raw oppure istruzioni specifiche del
+        server utilizzato. HTML Firmware Studio centralizza queste conversioni
+        in un’unica interfaccia e consente di cambiare profilo senza riscrivere
+        manualmente il contenuto.
+      </p>
+
+      <h2>Profili di esportazione</h2>
+      <ol>
+        <li>
+          <strong>Arduino client.print / client.println:</strong> adatto a
+          WiFiClient, EthernetClient e altri oggetti compatibili con Print.
+        </li>
+        <li>
+          <strong>C++ raw string in PROGMEM:</strong> genera una variabile HTML
+          residente nella memoria programma.
+        </li>
+        <li>
+          <strong>ESP32 WebServer ed ESP8266WebServer:</strong> genera il codice
+          per server.send_P con route e Content-Type configurabili.
+        </li>
+        <li>
+          <strong>ESPAsyncWebServer:</strong> genera la risposta tramite
+          request-&gt;send_P.
+        </li>
+        <li>
+          <strong>MicroPython socket:</strong> crea PAGE_HTML e il relativo
+          invio tramite socket.
+        </li>
+        <li>
+          <strong>CircuitPython Adafruit HTTPServer:</strong> prepara la
+          risposta con l’oggetto Response.
+        </li>
+      </ol>
+
+      <h2>Conversione inversa automatica</h2>
+      <p>
+        Il motore riconosce automaticamente le istruzioni client.print e
+        client.println, comprese quelle racchiuse nella macro F(), le stringhe
+        C++ raw archiviate in PROGMEM e le assegnazioni Python prodotte dal
+        programma. Il contenuto viene decodificato e riportato nell’editor HTML
+        mantenendo, quando possibile, righe vuote e indentazione.
+      </p>
+
+      <h2>Flusso di utilizzo</h2>
+      <ol>
+        <li>Si apre o si incolla la pagina HTML nell’editor sorgente.</li>
+        <li>Si seleziona il profilo di destinazione.</li>
+        <li>Si configurano nomi, route, Content-Type e opzioni del profilo.</li>
+        <li>Il programma genera il codice firmware nell’editor di output.</li>
+        <li>Il risultato può essere copiato oppure salvato nel formato corretto.</li>
+        <li>Con lo scambio degli editor è possibile eseguire la procedura inversa.</li>
+      </ol>
+
+      <h2>Gestione dei file</h2>
+      <p>
+        L’applicazione apre file HTML e sorgenti firmware con estensioni
+        <code>.html</code>, <code>.htm</code>, <code>.ino</code>,
+        <code>.cpp</code>, <code>.h</code>, <code>.hpp</code>,
+        <code>.py</code> e <code>.txt</code>. Sono disponibili comandi per
+        aprire, copiare, incollare, scambiare i due editor e salvare l’output
+        con un’estensione coerente al profilo selezionato.
+      </p>
+
+      <h2>Impostazioni avanzate</h2>
+      <ul>
+        <li>Nome personalizzabile del client, server o socket.</li>
+        <li>Nome configurabile della variabile contenente il codice HTML.</li>
+        <li>Route HTTP e Content-Type modificabili.</li>
+        <li>Macro <code>F()</code> opzionale per ridurre l’utilizzo della RAM.</li>
+        <li>Intestazioni HTTP opzionali per i profili che le richiedono.</li>
+        <li>Selettore rapido del profilo direttamente nel convertitore.</li>
+      </ul>
+
+      <h2>Interfaccia e documentazione</h2>
+      <p>
+        La GUI utilizza il tema Mannino Maker scuro con accenti verdi e può
+        essere commutata anche in modalità chiara. La navigazione comprende il
+        convertitore, un manuale interno completo e una pagina di impostazioni.
+        Il manuale contiene esempi dedicati alle piattaforme supportate e
+        permette di utilizzare il programma senza consultare documentazione
+        esterna.
+      </p>
+
+      <h2>Qualità e test</h2>
+      <p>
+        Il progetto comprende test automatici per verificare la reversibilità
+        delle conversioni. Sono inoltre inclusi esempi pronti per ESP32,
+        ESPAsyncWebServer, Arduino Ethernet, MicroPython e CircuitPython,
+        insieme agli script per preparare, avviare e compilare la versione
+        Windows.
+      </p>
+
+      <h2>Versione 2.0.3</h2>
+      <p>
+        La versione 2.0.3 migliora il branding dell’applicazione, la
+        visualizzazione del logo nei temi chiaro e scuro, i margini di sicurezza
+        dell’icona e la generazione delle icone per Windows, Android e macOS.
+    
+      </p>
+
+      <h2>Destinatari</h2>
+      <p>
+        Il software è pensato per maker, studenti, sviluppatori embedded e
+        tecnici che realizzano pannelli di controllo, pagine di configurazione,
+        dashboard locali e interfacce web ospitate direttamente su
+        microcontrollori.
+      </p>
+    </article>
+
+    <aside class="project-sidebar">
+      <section id="featuresPanel" class="detail-panel">
+        <h2>Funzioni principali</h2>
+        <ul id="projectFeatures"></ul>
+      </section>
+
+      <section id="filesPanel" class="detail-panel">
+        <h2>File e formati</h2>
+        <div id="projectFiles" class="modal-tags"></div>
+      </section>
+
+
+
+      <section id="linksPanel" class="detail-panel project-links">
+        <h2>Download</h2>
+        <div id="projectLinks"></div>
+      </section>
+    </aside>
+  </div>
+
+  <section id="gallerySection" class="project-gallery-section hidden">
+    <div class="section-title">
+      <div>
+        <h2>Galleria</h2>
+        <p>Schermate e immagini del progetto.</p>
+      </div>
+    </div>
+    <div id="projectGallery" class="project-gallery"></div>
+  </section>
+
+  <section class="contact project-contact">
+    <div>
+      <div class="eyebrow">Informazioni sul progetto</div>
+      <h2>Contattami</h2>
+      <p>
+        Scrivimi per informazioni, adattamenti a nuovi formati firmware o
+        collaborazioni.
+      </p>
+    </div>
+    <div class="contact-actions">
+      <a id="projectMail" class="button primary">Invia un’email ✉</a>
+      <a class="button" href="../index.html">Torna al portfolio</a>
+    </div>
+  </section>
+
+  <footer class="footer">Mannino Maker · Portfolio personale</footer>
+</main>
+
+<script src="../project.js"></script>
+</body>
+</html>
