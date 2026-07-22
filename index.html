@@ -1,23 +1,136 @@
 <!doctype html>
 <html lang="it">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-        <meta name="theme-color" content="#061009">
-        <title>Mannino Maker — Portfolio</title>
-        <meta name="description" content="Portfolio personale di software, stampa 3D, elettronica e automazione.">
-        <link rel="icon" href="logo_mannino_maker.png"><link rel="stylesheet" href="styles.css">
-    </head>
-<body>
-    <main class="container">
-        <header class="hero">
-            <div class="hero-main">
-                <img class="logo" src="logo_mannino_maker.png" alt="Logo Mannino Maker">
-                <div>
-                    <div class="eyebrow">Portfolio personale · maker lab</div>
-                    <h1>Mannino Maker</h1>
-                    <p class="hero-copy">Software, stampa 3D, elettronica, automazione, laser e guide pratiche. Ogni progetto ha una pagina dedicata con dettagli, tecnologie, immagini e risorse disponibili.</p></div></div><div class="hero-actions"><a class="button primary" href="#progetti">Esplora i progetti ↓</a><a class="button" href="#contatti">Contattami ✉</a></div></header>
-<section class="stats"><div class="stat"><strong id="statProjects">0</strong><span>progetti pubblicati</span></div><div class="stat"><strong id="statCategories">0</strong><span>categorie</span></div><div class="stat"><strong id="statResources">0</strong><span>file e risorse</span></div><div class="stat"><strong id="statFeatured">0</strong><span>progetti in evidenza</span></div></section>
-<div class="section-title"><div><h2>In evidenza</h2><p>Una selezione dei progetti principali.</p></div></div><section id="featuredGrid" class="featured-grid"></section>
-<section id="progetti"><div class="section-title"><div><h2>Tutti i progetti</h2><p>La ricerca controlla titolo, descrizione, tecnologie, file e funzioni.</p></div></div><div class="tools"><div class="tools-top"><label class="search-wrap"><span class="search-symbol">⌕</span><input id="projectSearch" type="search" placeholder="Cerca ESP32, STL, Flutter, Modbus, QR..." autocomplete="off"><button id="clearSearch" class="clear-search" type="button" aria-label="Cancella ricerca">×</button></label><select id="projectSort" class="sort" aria-label="Ordina progetti"><option value="order">Ordine portfolio</option><option value="az">Titolo A–Z</option><option value="category">Categoria</option><option value="newest">Più recenti</option></select></div><div id="filters" class="filters"></div></div><div class="results-line"><span id="resultCount"><b>0</b> progetti visibili</span><span id="currentFilter">Filtro: Tutti</span></div><div id="projectGrid" class="projects"></div><div id="emptyState" class="empty"><h3>Nessun progetto trovato</h3><p>Prova un’altra ricerca oppure azzera i filtri.</p><button id="resetAll" class="button" type="button">Azzera tutto</button></div></section>
-<section id="contatti" class="contact"><div><div class="eyebrow">Hai un’idea o una domanda?</div><h2>Contattami</h2><p>Scrivimi per informazioni sui progetti, richieste personalizzate, software, stampa 3D o collaborazioni maker.</p></div><div class="contact-actions"><a id="mailLink" class="button primary">Invia un’email ✉</a><button id="copyEmail" class="button" type="button">Copia indirizzo</button><span id="emailText" class="contact-email"></span></div></section><footer class="footer">Mannino Maker · Portfolio personale</footer></main><div id="toast" class="toast" role="status" aria-live="polite"></div><script>window.MM_CONFIG=Object.freeze({contactEmail:"g.mannino.info@gmail.com",githubProfile:""});</script><script src="app.js"></script></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#030604">
+  <title>Giuseppe Mannino — Automazione, Software e Maker</title>
+  <meta name="description" content="Portfolio professionale di Giuseppe Mannino: automazione industriale, sviluppo software, elettronica, IoT e prototipazione.">
+  <link rel="icon" href="logo_mannino_maker.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <div class="nav-shell">
+     
+      <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Apri menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Navigazione principale">
+        <a class="active" href="#home">Home</a>
+        <a href="#profilo">Profilo</a>
+        <a href="#competenze">Competenze</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="home-shell">
+    <section class="cv-hero reveal">
+      <div class="hero-circuit" aria-hidden="true"></div>
+      <div class="cv-hero-copy">
+        <p class="cv-kicker">Ciao, sono</p>
+        <h1>Giuseppe Mannino</h1>
+        <h2>Tecnico di automazione industriale,<br>sviluppatore software e maker.</h2>
+        <p>Trasformo esigenze reali in soluzioni concrete, combinando automazione, elettronica, sviluppo software, progettazione e prototipazione.</p>
+        <div class="cv-actions">
+          <a class="button primary" href="#progetti">Scopri i miei progetti</a>
+          <a class="button" href="#profilo">Profilo professionale</a>
+          <a class="button" href="#contatti">Contattami</a>
+        </div>
+      </div>
+      <div class="hero-portrait-wrap" aria-label="Foto di Giuseppe Mannino">
+        <div class="portrait-glow"></div>
+        <img class="hero-portrait" src="assets/profile/giuseppe-mannino.png" alt="Giuseppe Mannino">
+      </div>
+    </section>
+
+    <section id="profilo" class="profile-overview reveal">
+      <article class="about-panel">
+        <div class="section-label">Chi sono</div>
+        <p>Lavoro nel settore dell’automazione industriale, occupandomi della realizzazione, installazione, collaudo e messa in servizio di impianti e isole robotizzate.</p>
+        <p>Parallelamente sviluppo software, applicazioni, sistemi web, dispositivi elettronici e progetti maker pensati per risolvere problemi concreti.</p>
+      </article>
+      <div class="profile-metrics">
+        <article><span class="metric-icon">▦</span><strong>10+</strong><small>Anni di esperienza</small></article>
+        <article><span class="metric-icon">&lt;/&gt;</span><strong id="statProjects">0</strong><small>Progetti pubblicati</small></article>
+        <article><span class="metric-icon">⌘</span><strong id="statCategories">0</strong><small>Aree progettuali</small></article>
+        <article><span class="metric-icon">✦</span><strong>Su misura</strong><small>Soluzioni complete</small></article>
+      </div>
+      <span id="statResources" hidden>0</span><span id="statFeatured" hidden>0</span>
+    </section>
+
+    <section id="competenze" class="cv-section reveal">
+      <div class="cv-section-heading"><h2>Competenze</h2><span></span></div>
+      <div class="skills-grid">
+        <article class="skill-card"><div class="skill-icon">⚙</div><h3>Automazione industriale</h3><p>PLC, HMI, robotica, impianti elettrici, collaudo, installazione e gestione delle attività.</p><a href="#progetti" data-skill-search="automazione">Vedi progetti</a></article>
+        <article class="skill-card"><div class="skill-icon">&lt;/&gt;</div><h3>Software e applicazioni</h3><p>Flutter, Dart, Python, HTML, CSS, JavaScript, Node.js, React, API e database.</p><a href="#progetti" data-skill-search="app">Vedi progetti</a></article>
+        <article class="skill-card"><div class="skill-icon">▣</div><h3>Elettronica e IoT</h3><p>ESP32, ESP8266, Arduino, sensori, comunicazioni Wi-Fi, Bluetooth e Modbus.</p><a href="#progetti" data-skill-search="ESP32">Vedi progetti</a></article>
+        <article class="skill-card"><div class="skill-icon">◇</div><h3>Prototipazione</h3><p>Stampa 3D, laser, CNC, PCB, progettazione meccanica e realizzazione di prototipi.</p><a href="#progetti" data-skill-search="stampa">Vedi progetti</a></article>
+      </div>
+    </section>
+
+    <section class="cv-section reveal">
+      <div class="cv-section-heading"><h2>Esperienza e percorso professionale</h2><span></span></div>
+      <div class="timeline-grid">
+        <article><div class="timeline-icon">▥</div><h3>Automazione e controllo industriale</h3><p>Progettazione, realizzazione e collaudo di impianti e isole robotizzate.</p></article>
+        <article><div class="timeline-icon">⚙</div><h3>Coordinamento di produzione</h3><p>Organizzazione di tecnici, attività, installazioni e priorità operative.</p></article>
+        <article><div class="timeline-icon">&lt;/&gt;</div><h3>Sviluppo software</h3><p>Applicazioni desktop, mobile e web sviluppate partendo da esigenze reali.</p></article>
+        <article><div class="timeline-icon">▦</div><h3>Progettazione e integrazione</h3><p>Unione di hardware, firmware e software in sistemi completi e affidabili.</p></article>
+        <article><div class="timeline-icon">⌁</div><h3>Assistenza e miglioramento</h3><p>Supporto, manutenzione, aggiornamenti e ottimizzazione continua.</p></article>
+      </div>
+    </section>
+
+    <section class="cv-section reveal">
+      <div class="cv-section-heading"><h2>Come lavoro</h2><span></span></div>
+      <div class="process-grid">
+        <article><b>1</b><div class="process-icon">⌕</div><h3>Analisi del problema</h3><p>Ascolto le esigenze e definisco obiettivi, vincoli e priorità.</p></article>
+        <article><b>2</b><div class="process-icon">✎</div><h3>Progettazione</h3><p>Scelgo architettura, tecnologie e funzionalità più adatte.</p></article>
+        <article><b>3</b><div class="process-icon">&lt;/&gt;</div><h3>Sviluppo</h3><p>Realizzo software, firmware, hardware e integrazioni.</p></article>
+        <article><b>4</b><div class="process-icon">⚗</div><h3>Prototipazione e test</h3><p>Verifico affidabilità, usabilità e prestazioni della soluzione.</p></article>
+        <article><b>5</b><div class="process-icon">▤</div><h3>Documentazione</h3><p>Consegno una soluzione chiara, migliorabile e supportabile.</p></article>
+      </div>
+    </section>
+
+    <section id="progetti" class="projects-area reveal">
+      <div class="cv-section-heading"><h2>Progetti selezionati</h2><span></span><p>Una selezione di software, dispositivi e soluzioni sviluppati partendo da esigenze concrete.</p></div>
+      <div id="featuredGrid" class="featured-grid"></div>
+      <div class="featured-footer"><a class="button" href="#catalogo">Visualizza tutti i progetti ↓</a></div>
+
+      <div id="catalogo" class="catalogue-box">
+        <div class="catalogue-intro"><div class="catalogue-icon">▣</div><div><h2>Catalogo completo</h2><p>Esplora tutti i progetti.</p></div></div>
+        <div class="catalogue-count"><strong id="catalogueProjectCount">0</strong><span>Progetti disponibili</span></div>
+        <div class="catalogue-tools">
+          <div class="tools">
+            <div class="tools-top">
+              <label class="search-wrap"><span class="search-symbol">⌕</span><input id="projectSearch" type="search" placeholder="Cerca tra i progetti..." autocomplete="off"><button id="clearSearch" class="clear-search" type="button" aria-label="Cancella ricerca">×</button></label>
+              <select id="projectSort" class="sort" aria-label="Ordina progetti"><option value="order">Ordine portfolio</option><option value="az">Titolo A–Z</option><option value="category">Categoria</option><option value="newest">Più recenti</option></select>
+            </div>
+            <div id="filters" class="filters"></div>
+          </div>
+        </div>
+      </div>
+      <div class="results-line"><span id="resultCount"><b>0</b> progetti visibili</span><span id="currentFilter">Filtro: Tutti</span></div>
+      <div id="projectGrid" class="projects"></div>
+      <div id="emptyState" class="empty"><h3>Nessun progetto trovato</h3><p>Prova un’altra ricerca oppure azzera i filtri.</p><button id="resetAll" class="button" type="button">Azzera tutto</button></div>
+    </section>
+
+    <section id="contatti" class="cv-contact reveal">
+      <div class="contact-doc">▤</div>
+      <div><h2>Vuoi conoscere meglio il mio percorso?</h2><p>Contattami per informazioni, collaborazioni o soluzioni personalizzate.</p><span id="emailText" class="contact-email"></span></div>
+      <div class="contact-actions"><a id="mailLink" class="button primary">Invia un’email</a><button id="copyEmail" class="button" type="button">Copia indirizzo</button></div>
+    </section>
+  </main>
+
+  <footer class="cv-footer">
+   
+    <span>© <span id="currentYear"></span> Mannino Maker. Tutti i diritti riservati.</span>
+
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>window.MM_CONFIG=Object.freeze({contactEmail:"g.mannino.info@gmail.com",githubProfile:""});</script>
+  <script src="app.js"></script>
+</body>
+</html>
