@@ -172,7 +172,7 @@
       .join("");
     $("#filesPanel").classList.toggle("hidden", files.length === 0);
 
-    renderProjectButton(data);
+    //renderProjectButton(data);
     renderLinks(data);
     renderGallery(data);
 

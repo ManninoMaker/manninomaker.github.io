@@ -60,15 +60,208 @@
       {
         "image": "assets/projects/gestione-postazioni-lago/come-funziona.png",
         "caption": "Infografica del flusso di utilizzo del sistema"
-      },
-      {
-        "image": "assets/projects/gestione-postazioni-lago/mappa-originale.jpeg",
-        "caption": "Mappa reale utilizzata dal sistema con le 20 postazioni"
       }
     ],
 
     "page_url": "progetti/gestione-postazioni-lago.html",
     "url": "progetti/gestione-postazioni-lago.html",
     "project_url": ""
-  }
+  },
+  {
+  "slug": "html-firmware-studio",
+  "title": "HTML Firmware Studio",
+  "category": "App",
+  "short_description": "Applicazione per convertire pagine HTML nei formati utilizzati da Arduino, ESP32, ESP8266, MicroPython e CircuitPython, con conversione inversa.",
+  "description": "Studio multiprofilo per incorporare interfacce HTML nei firmware dei microcontrollori e ricostruire il file HTML dal codice sorgente generato.",
+  "icon": "HF",
+  "status": "Funzionante",
+  "level": "Avanzato",
+  "technologies": [
+    "Arduino/C++",
+    "ESP32/ESP8266",
+    "MicroPython",
+    "CircuitPython"
+  ],
+  "files": [
+    "Progetto Windows"
+  ],
+  "features": [
+    "Conversione bidirezionale tra HTML e codice firmware",
+    "Arduino client.print e client.println",
+    "Stringhe C++ raw in PROGMEM",
+    "ESP32 WebServer ed ESP8266WebServer",
+    "ESPAsyncWebServer",
+    "MicroPython socket",
+    "CircuitPython Adafruit HTTPServer",
+    "Apertura e salvataggio di HTML, INO, CPP, H, HPP, PY e TXT",
+    "Nomi di client, server, socket e variabile HTML personalizzabili",
+    "Route HTTP e Content-Type configurabili",
+    "Macro F() e intestazioni HTTP opzionali",
+    "Conservazione di indentazione e righe vuote",
+    "Manuale interno con esempi per ogni piattaforma",
+    "Tema chiaro e scuro",
+    "Test automatici di conversione reversibile"
+  ],
+  "links": [
+    {
+      "label": "Scarica HTML Firmware Studio v2.0.4",
+      "url": "https://github.com/ManninoMaker/html-firmware-studio/releases/download/APP/HTML_Firmware_Studio_v2.0.4.zip",
+      "style": "primary"
+    }
+  ],
+  "featured": true,
+  "published": true,
+  "order": 2,
+  "date": "2026-07-20",
+  "image_url": "assets/projects/html-firmware-studio/copertina.png",
+  "gallery": [
+     {
+        "image": "assets/projects/html-firmware-studio/home.png",
+        "caption": "Home"
+      },
+      {
+        "image": "assets/projects/html-firmware-studio/home_dark.png",
+        "caption": "Home Dark"
+      }
+  ],
+  "page_url": "progetti/html-firmware-studio.html",
+  "url": "progetti/html-firmware-studio.html",
+  "project_url": ""
+},
+{
+  "slug": "imagecraft",
+  "title": "ImageCraft",
+  "category": "App",
+  "short_description": "Applicazione per rimuovere automaticamente lo sfondo dalle immagini, esportare PNG trasparenti e creare icone Windows in formato ICO.",
+  "description": "Strumento semplice per ottenere immagini con sfondo trasparente e convertirle in icone Windows multi-risoluzione, utilizzabile su PC e Android.",
+  "icon": "IC",
+  "status": "Funzionante",
+  "level": "Avanzato",
+  "technologies": [
+    "Elaborazione immagini",
+    "PNG trasparente",
+    "Icone ICO",
+    "Windows",
+    "Android"
+  ],
+  "files": [
+    "Installer Windows",
+    "APK Android",
+    "PNG trasparente",
+    "Icone ICO"
+  ],
+  "features": [
+    "Rimozione automatica dello sfondo dalle immagini",
+    "Elaborazione offline direttamente sul dispositivo",
+    "Modalità online opzionale per immagini più complesse",
+    "Anteprima dell'immagine originale e del risultato",
+    "Esportazione in PNG con trasparenza reale",
+    "Conversione dell'immagine originale o scontornata in formato ICO",
+    "Creazione di icone multi-risoluzione da 16 a 256 pixel",
+    "Adattamento completo con margini trasparenti o ritaglio quadrato",
+    "Interfaccia ottimizzata per PC e dispositivi Android",
+    "Salvataggio diretto dei file elaborati"
+  ],
+  "links": [
+    {
+      "label": "Scarica installer Windows v1.1.3",
+      "url": "https://github.com/ManninoMaker/imagecraft/releases/download/app/ImageCraft_Setup_1.1.3_x64.zip",
+      "style": "primary"
+    },
+    {
+      "label": "Scarica APK Android v1.1.3",
+      "url": "download/imagecraft/ImageCraft_v1.1.3.apk",
+      "style": "normal"
+    }
+  ],
+  "featured": false,
+  "published": true,
+  "order": 3,
+  "date": "2026-07-21",
+  "image_url": "assets/projects/imagecraft/copertina.png",
+  "gallery": [
+    {
+      "image": "assets/projects/imagecraft/locandina.png",
+      "caption": "Locandina"
+    }
+  ],
+  "page_url": "progetti/imagecraft.html",
+  "url": "progetti/imagecraft.html",
+  "project_url": ""
+},
+{
+  "slug": "dimaprint",
+  "title": "DimaPrint",
+  "category": "App",
+  "short_description": "Applicazione per creare dime tecniche personalizzate e generare PDF stampabili in scala reale 1:1.",
+  "description": "Strumento per progettare dime di foratura, griglie, flange, attacchi VESA, maniglie, cerniere e cerchi, con anteprima tecnica ed esportazione PDF in scala reale.",
+  "icon": "DP",
+  "status": "Funzionante",
+  "level": "Avanzato",
+  "technologies": [
+    "Flutter",
+    "Dart",
+    "PDF vettoriale",
+    "Stampa 1:1",
+    "Windows"
+  ],
+  "files": [
+    "Installer Windows",
+    "PDF in scala 1:1",
+    "Dime su più pagine",
+    "Formati A4 e A3"
+  ],
+  "features": [
+    "Creazione di dime per fori in linea",
+    "Generazione di griglie di foratura personalizzate",
+    "Dime per flange e piastre circolari",
+    "Supporto per attacchi VESA",
+    "Dime per maniglie, staffe e cerniere",
+    "Creazione di cerchi e riferimenti concentrici",
+    "Inserimento preciso delle misure in millimetri",
+    "Anteprima tecnica aggiornata in tempo reale",
+    "Esportazione PDF vettoriale in scala reale 1:1",
+    "Formati pagina A4 e A3, verticali oppure orizzontali",
+    "Suddivisione automatica delle dime grandi su più fogli",
+    "Sovrapposizione, riferimenti e linee di taglio per allineare le pagine",
+    "Quadrato di controllo 20 x 20 mm per verificare la scala di stampa",
+    "Stampa, salvataggio e condivisione del PDF",
+    "Funzionamento offline senza account obbligatorio",
+    "Interfaccia moderna dark con identità Mannino Maker"
+  ],
+  "links": [
+    {
+      "label": "Scarica installer Windows v1.0.4",
+      "url": "https://github.com/ManninoMaker/dimaprint/releases/download/app/DimaPrint_Setup_1.0.4.zip",
+      "style": "primary"
+    }
+  ],
+  "featured": false,
+  "published": true,
+  "order": 4,
+  "date": "2026-07-22",
+  "image_url": "assets/projects/dimaprint/copertina.png",
+  "gallery": [
+    {
+      "image": "assets/projects/dimaprint/home.png",
+      "caption": "Schermata principale con le categorie di dime disponibili"
+    },
+    {
+      "image": "assets/projects/dimaprint/configurazione.png",
+      "caption": "Configurazione precisa delle misure, del formato pagina e delle opzioni di stampa"
+    },
+    {
+      "image": "assets/projects/dimaprint/anteprima-pdf.png",
+      "caption": "Anteprima della dima tecnica prima della generazione e della stampa del PDF"
+    },
+    {
+      "image": "assets/projects/dimaprint/tipi-dime.png",
+      "caption": "Tipologie dime"
+    }
+  ],
+  "page_url": "progetti/dimaprint.html",
+  "url": "progetti/dimaprint.html",
+  "project_url": ""
+}
+
 ]

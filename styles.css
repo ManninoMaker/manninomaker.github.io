@@ -130,3 +130,33 @@ transform:none
 .project-lightbox-next{right:calc(50% - 63px)}
 }
 
+/* Correzioni catalogo e pagina progetto */
+.tools{
+  isolation:isolate;
+  overflow:visible;
+  background:linear-gradient(145deg,rgba(8,16,11,.98),rgba(4,9,6,.98));
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+.filters{
+  align-items:center;
+  min-height:46px;
+  margin:6px -2px -3px;
+  padding:3px 2px 5px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-padding-inline:2px;
+}
+.filter{flex:0 0 auto;}
+#projectLinks{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+#projectLinks .button{margin:0;}
+@media(max-width:760px){
+  .tools{top:4px;}
+  .filters{min-height:48px;padding-bottom:7px;}
+}
